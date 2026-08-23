@@ -8,6 +8,16 @@ if (heroHeadline) {
   heroHeadline.innerHTML = '100% MUZIEK. 100% HUMOR. <span>100% TRICO.</span>';
 }
 
+const actsHeading = document.querySelector('.acts-section .section-heading');
+if (actsHeading) {
+  const eyebrow = actsHeading.querySelector('.eyebrow');
+  const title = actsHeading.querySelector('h2');
+  const intro = actsHeading.querySelector('p:not(.eyebrow)');
+  if (eyebrow) eyebrow.textContent = 'Welke show past bij jullie?';
+  if (title) title.textContent = 'Van Muziekbingo tot Dinershow of live feestmuziek.';
+  if (intro) intro.textContent = 'Van een compleet avondprogramma tot een korter optreden: we kijken naar de gelegenheid, het publiek en de beschikbare tijd en maken het programma op maat.';
+}
+
 const bingoPhoto = document.querySelector('.bingo-photo-main');
 if (bingoPhoto) {
   bingoPhoto.src = 'assets/images/originals/004.jpg';
