@@ -8,6 +8,12 @@ if (heroHeadline) {
   heroHeadline.innerHTML = '100% MUZIEK. 100% HUMOR. <span>100% TRICO.</span>';
 }
 
+const bingoPhoto = document.querySelector('.bingo-photo-main');
+if (bingoPhoto) {
+  bingoPhoto.src = 'assets/images/originals/004.jpg';
+  bingoPhoto.alt = '100% Trico tijdens de Muziekbingo';
+}
+
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 
