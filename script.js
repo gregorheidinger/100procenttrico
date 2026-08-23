@@ -3,6 +3,11 @@ heroLayoutStylesheet.rel = 'stylesheet';
 heroLayoutStylesheet.href = 'hero-layout.css';
 document.head.appendChild(heroLayoutStylesheet);
 
+const heroHeadline = document.querySelector('.hero-copy h1');
+if (heroHeadline) {
+  heroHeadline.innerHTML = '100% MUZIEK. 100% HUMOR. <span>100% TRICO.</span>';
+}
+
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 
