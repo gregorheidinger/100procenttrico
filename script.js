@@ -1,3 +1,8 @@
+const heroLayoutStylesheet = document.createElement('link');
+heroLayoutStylesheet.rel = 'stylesheet';
+heroLayoutStylesheet.href = 'hero-layout.css';
+document.head.appendChild(heroLayoutStylesheet);
+
 const menuButton = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('.site-nav');
 
