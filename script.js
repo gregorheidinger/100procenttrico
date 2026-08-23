@@ -18,6 +18,22 @@ if (actsHeading) {
   if (intro) intro.textContent = 'Van een compleet avondprogramma tot een korter optreden: we kijken naar de gelegenheid, het publiek en de beschikbare tijd en maken het programma op maat.';
 }
 
+const possibilityCopy = document.querySelector('.possibilities-section .possibility-copy p');
+if (possibilityCopy) {
+  possibilityCopy.textContent = 'Op een feest, verjaardag, camping, Oktoberfest, carnaval, smartlappenfestival of in een zorginstelling kunnen we bijvoorbeeld blokken van ongeveer een half uur zingen. Kies één blok of combineer meerdere stijlen.';
+}
+
+const audienceStrip = document.querySelector('.possibilities-section .audience-strip');
+if (audienceStrip) {
+  ['Oktoberfest', 'Carnaval', 'Smartlappenfestival'].forEach((label) => {
+    if (![...audienceStrip.querySelectorAll('span')].some((span) => span.textContent === label)) {
+      const item = document.createElement('span');
+      item.textContent = label;
+      audienceStrip.appendChild(item);
+    }
+  });
+}
+
 const bingoPhoto = document.querySelector('.bingo-photo-main');
 if (bingoPhoto) {
   bingoPhoto.src = 'assets/images/originals/004.jpg';
