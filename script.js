@@ -40,11 +40,10 @@ if (bingoPhoto) {
   bingoPhoto.alt = '100% Trico tijdens de Muziekbingo';
 }
 
-// Restore the photo groups that were removed when the homepage was restructured.
 const actsContainer = document.querySelector('.acts-section .container');
 if (actsContainer && !actsContainer.querySelector('.show-photo-grid')) {
   const showPhotos = document.createElement('div');
-  showPhotos.className = 'show-photo-grid reveal';
+  showPhotos.className = 'show-photo-grid';
   showPhotos.innerHTML = '<figure class="show-photo show-photo-large"><img src="assets/images/originals/039.jpg" alt="100% Trico tijdens een optreden"></figure><figure class="show-photo"><img src="assets/images/originals/055.jpg" alt="100% Trico live op het podium"></figure><figure class="show-photo"><img src="assets/images/originals/062.jpg" alt="Sfeermoment tijdens een optreden van 100% Trico"></figure>';
   actsContainer.appendChild(showPhotos);
 }
@@ -53,7 +52,7 @@ const socialSection = document.querySelector('.social-section');
 if (socialSection && !document.querySelector('.restored-photo-gallery')) {
   const gallerySection = document.createElement('section');
   gallerySection.className = 'section media-feature-section restored-photo-gallery';
-  gallerySection.innerHTML = '<div class="container gallery-grid reveal"><figure class="gallery-item gallery-tall"><img src="assets/images/originals/042.jpg" alt="100% Trico live"></figure><figure class="gallery-item"><img src="assets/images/originals/043.jpg" alt="100% Trico sfeerbeeld"></figure><figure class="gallery-item"><img src="assets/images/originals/065.jpg" alt="100% Trico tijdens een optreden"></figure><figure class="gallery-item gallery-wide"><img src="assets/images/originals/kerst.jpg" alt="100% Trico in kerstsfeer"></figure></div>';
+  gallerySection.innerHTML = '<div class="container gallery-grid"><figure class="gallery-item gallery-tall"><img src="assets/images/originals/042.jpg" alt="100% Trico live"></figure><figure class="gallery-item"><img src="assets/images/originals/043.jpg" alt="100% Trico sfeerbeeld"></figure><figure class="gallery-item"><img src="assets/images/originals/065.jpg" alt="100% Trico tijdens een optreden"></figure><figure class="gallery-item gallery-wide"><img src="assets/images/originals/kerst.jpg" alt="100% Trico in kerstsfeer"></figure></div>';
   socialSection.parentNode.insertBefore(gallerySection, socialSection);
 }
 
