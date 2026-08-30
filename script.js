@@ -9,3 +9,5 @@ if(diner){
   if(bigcopy) bigcopy.textContent='Voor het diner én tussen de gangen door verzorgen Toos, Adrie en Stacey het entertainment.';
   if(body) body.innerHTML='De gasten worden volop bij de show betrokken: lekker meezingen, dansen en natuurlijk meedoen met de quiz. En dan is er nog de <strong>Foute Verloting</strong>: iedereen maakt kans op prachtige prijzen. Nou ja… <em>prachtig</em> is misschien een groot woord. 😉<br><br>Wil je de dinershow extra persoonlijk maken? Dan kunnen we een <strong>lied op maat</strong> maken waarin bijvoorbeeld de jarige, het bruidspaar, het bedrijf of een andere speciale gast volop in het zonnetje wordt gezet.<br><br>Zo wordt het niet alleen een gezellig diner, maar een avond waar aan tafel nog lang over nagepraat wordt.';
 }
+const dinerPhoto=document.querySelector('#diner .mainpic');
+if(dinerPhoto){dinerPhoto.src='assets/images/originals/055.jpg';dinerPhoto.alt='100% Trico dinershow';}
