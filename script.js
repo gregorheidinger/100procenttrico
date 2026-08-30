@@ -25,6 +25,14 @@ if(kerst){
   if(body) body.innerHTML='<strong>KERSTSHOW</strong><br>Een feestelijk optreden vol bekende kersthits, mooie samenzang, humor en contact met het publiek. Geschikt als zelfstandig optreden, tijdens een diner, of als onderdeel van een kerstfeest of kerstborrel.<br><br><strong>KERST MUZIEKBINGO</strong><br>Bingo, maar dan helemaal in kerstsfeer. Herken o.a. de kersthits, kruis ze af op je bingokaart en zing vooral uit volle borst mee. Natuurlijk zijn er ook prijzen te winnen.<br><br><strong>KERSTPAKKETTEN UITDELEN</strong><br>Maak van het uitdelen van de kerstpakketten een feestje. Combineer het bijvoorbeeld met de Kerst Muziekbingo, waarbij uiteindelijk iedereen tegelijk bingo heeft. En wat is de prijs? Natuurlijk: het kerstpakket! Zo wordt het uitdelen zelf onderdeel van het entertainment.<br><br><strong>IETS BIJZONDERS IN GEDACHTEN?</strong><br>Een medewerker in het zonnetje zetten, een kerstlied op maat of verschillende onderdelen combineren? We maken de kerstshow graag passend bij jullie feest.';
 }
 const family=document.querySelector('#trico');
+if(family && !document.querySelector('#publiek')){
+  const audience=document.createElement('section');
+  audience.className='audience reveal';
+  audience.id='publiek';
+  audience.innerHTML='<div class="audience-head"><p class="kicker">ZO ZIET EEN AVONDJE TRICO ERUIT</p><h2>Stilzitten<br><span>is geen optie.</span></h2><p class="bigcopy">Meezingen, lachen, dansen en soms nét iets enthousiaster meedoen dan je van plan was.</p></div><div class="audience-grid"><figure class="audience-main"><img src="assets/images/originals/043.jpg" alt="Enthousiast publiek tijdens 100% Trico" loading="lazy"></figure><figure><img src="assets/images/originals/034.jpg" alt="Lachende gasten tijdens 100% Trico" loading="lazy"></figure><figure><img src="assets/images/originals/009.jpg" alt="100% Trico in contact met het publiek" loading="lazy"></figure><figure class="audience-wide"><img src="assets/images/originals/007.jpg" alt="Feestende zaal tijdens 100% Trico" loading="lazy"></figure></div>';
+  family.insertAdjacentElement('beforebegin',audience);
+  io.observe(audience);
+}
 if(family && !document.querySelector('#techniek')){
   const tech=document.createElement('section');
   tech.className='techni-koos reveal';
