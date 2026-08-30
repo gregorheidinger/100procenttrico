@@ -1,5 +1,12 @@
 const m=document.querySelector('.menu'),n=document.querySelector('.topbar nav');m?.addEventListener('click',()=>{const o=n.classList.toggle('open');m.setAttribute('aria-expanded',o);m.setAttribute('aria-label',o?'Menu sluiten':'Menu openen')});document.querySelectorAll('.topbar nav a').forEach(a=>a.addEventListener('click',()=>{n.classList.remove('open');m?.setAttribute('aria-expanded','false');m?.setAttribute('aria-label','Menu openen')}));const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.1});document.querySelectorAll('.reveal').forEach(e=>io.observe(e));document.getElementById('year').textContent=new Date().getFullYear();
 
+const intro=document.querySelector('.intro');
+if(intro && !intro.querySelector('.intro-flyer')){
+  const flyer=document.createElement('div');
+  flyer.className='intro-flyer';
+  flyer.innerHTML='<img src="assets/images/originals/flyer.jpg" alt="100% Trico flyer" loading="lazy">';
+  intro.appendChild(flyer);
+}
 const diner=document.querySelector('#diner .feature-copy');
 if(diner){
   const title=diner.querySelector('h2');
