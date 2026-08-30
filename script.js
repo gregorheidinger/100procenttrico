@@ -14,4 +14,4 @@ if(dinerPhoto){dinerPhoto.src='assets/images/originals/055.jpg';dinerPhoto.alt='
 const maatwerkPhoto=document.querySelector('#maatwerk .widephoto img');
 if(maatwerkPhoto){maatwerkPhoto.src='assets/images/originals/002.png';maatwerkPhoto.alt='100% Trico live';}
 const galleryMiddle=document.querySelector('.gallery img:nth-child(2)');
-if(galleryMiddle){galleryMiddle.src='assets/images/originals/015.jpg';galleryMiddle.alt='100% Trico live';}
+if(galleryMiddle){galleryMiddle.src='assets/images/originals/010.jpg';galleryMiddle.alt='100% Trico live';}
