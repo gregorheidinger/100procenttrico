@@ -24,3 +24,12 @@ if(kerst){
   if(bigcopy) bigcopy.textContent='Kerst met 100% Trico is warm, uitbundig en vooral live.';
   if(body) body.innerHTML='<strong>KERSTSHOW</strong><br>Een feestelijk optreden vol bekende kersthits, mooie samenzang, humor en contact met het publiek. Geschikt als zelfstandig optreden, tijdens een diner, of als onderdeel van een kerstfeest of kerstborrel.<br><br><strong>KERST MUZIEKBINGO</strong><br>Bingo, maar dan helemaal in kerstsfeer. Herken o.a. de kersthits, kruis ze af op je bingokaart en zing vooral uit volle borst mee. Natuurlijk zijn er ook prijzen te winnen.<br><br><strong>KERSTPAKKETTEN UITDELEN</strong><br>Maak van het uitdelen van de kerstpakketten een feestje. Combineer het bijvoorbeeld met de Kerst Muziekbingo, waarbij uiteindelijk iedereen tegelijk bingo heeft. En wat is de prijs? Natuurlijk: het kerstpakket! Zo wordt het uitdelen zelf onderdeel van het entertainment.<br><br><strong>IETS BIJZONDERS IN GEDACHTEN?</strong><br>Een medewerker in het zonnetje zetten, een kerstlied op maat of verschillende onderdelen combineren? We maken de kerstshow graag passend bij jullie feest.';
 }
+const family=document.querySelector('#trico');
+if(family && !document.querySelector('#techniek')){
+  const tech=document.createElement('section');
+  tech.className='techni-koos reveal';
+  tech.id='techniek';
+  tech.innerHTML='<div class="techni-photo"><img src="assets/images/originals/072.jpg" alt="Techni-Koos van 100% Trico" loading="lazy"></div><div class="techni-copy"><p class="kicker">OOK DE TECHNIEK ZIT IN DE FAMILIE</p><h2>Techniek?<br><span>Dat regelt Techni-Koos.</span></h2><p class="bigcopy">Onze neef Techni-Koos zorgt dat Toos, Adrie en Stacey niet alleen gezien, maar vooral ook goed gehoord worden.</p><p>100% Trico beschikt over een eigen professionele geluidsinstallatie en kan daarmee op veel locaties volledig zelfstandig optreden. Van een intiem feestje tot een grotere zaal: we stemmen de techniek af op de locatie en het aantal gasten.</p><p>Is er op locatie al professionele techniek aanwezig? Geen probleem. Dan overleggen we vooraf wat er nodig is en sluiten we daarop aan.</p><ul><li>Eigen geluidsinstallatie mogelijk</li><li>Geschikt voor kleine én grotere gezelschappen</li><li>Techniek afgestemd op de locatie</li><li>Aanwezige techniek? Dan overleggen we vooraf</li></ul><p class="techni-joke">En als er ergens een kabel verkeerd ligt… dan geven we Techni-Koos de schuld. 😉</p></div>';
+  family.insertAdjacentElement('afterend',tech);
+  io.observe(tech);
+}
