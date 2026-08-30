@@ -18,6 +18,8 @@ if(diner){
 }
 const dinerPhoto=document.querySelector('#diner .mainpic');
 if(dinerPhoto){dinerPhoto.src='assets/images/originals/055.jpg';dinerPhoto.alt='100% Trico dinershow';}
+const dinerFloatPhoto=document.querySelector('#diner .floatpic');
+if(dinerFloatPhoto){dinerFloatPhoto.src='assets/images/originals/069.jpg';dinerFloatPhoto.alt='Publiek tijdens de dinershow van 100% Trico';}
 const maatwerkPhoto=document.querySelector('#maatwerk .widephoto img');
 if(maatwerkPhoto){maatwerkPhoto.src='assets/images/originals/002.png';maatwerkPhoto.alt='100% Trico live';}
 const galleryMiddle=document.querySelector('.gallery img:nth-child(2)');
