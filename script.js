@@ -50,3 +50,50 @@ if(family && !document.querySelector('#techniek')){
   family.insertAdjacentElement('afterend',tech);
   io.observe(tech);
 }
+
+// Privacyvriendelijke Google Analytics: pas laden na toestemming.
+(()=>{
+  const GA_ID='G-2RKH71W1FP';
+  const CONSENT_KEY='trico_analytics_consent';
+  let analyticsLoaded=false;
+
+  function loadAnalytics(){
+    if(analyticsLoaded) return;
+    analyticsLoaded=true;
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){window.dataLayer.push(arguments);};
+    window.gtag('js',new Date());
+    window.gtag('config',GA_ID,{anonymize_ip:true});
+    const s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(GA_ID);
+    document.head.appendChild(s);
+  }
+
+  function closeBanner(){document.getElementById('trico-cookie-banner')?.remove();}
+  function saveConsent(value){
+    try{localStorage.setItem(CONSENT_KEY,value);}catch(e){}
+    closeBanner();
+    if(value==='accepted') loadAnalytics();
+  }
+
+  function showBanner(){
+    if(document.getElementById('trico-cookie-banner')) return;
+    const style=document.createElement('style');
+    style.textContent=`#trico-cookie-banner{position:fixed;z-index:99999;left:18px;right:18px;bottom:18px;max-width:760px;margin:auto;background:#100d0d;color:#fff;border:1px solid rgba(255,255,255,.18);border-radius:16px;box-shadow:0 12px 45px rgba(0,0,0,.45);padding:18px 20px;font-family:"DM Sans",sans-serif;display:flex;gap:18px;align-items:center;justify-content:space-between}#trico-cookie-banner strong{display:block;font-size:17px;margin-bottom:4px}#trico-cookie-banner p{margin:0;line-height:1.45;font-size:14px;color:#eee}#trico-cookie-banner .cookie-actions{display:flex;gap:9px;flex-shrink:0}#trico-cookie-banner button{border-radius:999px;padding:10px 15px;font:700 13px "DM Sans",sans-serif;cursor:pointer}#trico-cookie-accept{background:#d82424;color:#fff;border:1px solid #d82424}#trico-cookie-reject{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)}@media(max-width:650px){#trico-cookie-banner{left:10px;right:10px;bottom:10px;display:block;padding:16px}#trico-cookie-banner .cookie-actions{margin-top:13px}#trico-cookie-banner button{flex:1}}`;
+    document.head.appendChild(style);
+    const banner=document.createElement('aside');
+    banner.id='trico-cookie-banner';
+    banner.setAttribute('role','dialog');
+    banner.setAttribute('aria-label','Cookievoorkeuren');
+    banner.innerHTML='<div><strong>Cookies 🍪</strong><p>We gebruiken analytische cookies om te zien hoe onze website wordt gebruikt. Zo kunnen we hem blijven verbeteren.</p></div><div class="cookie-actions"><button id="trico-cookie-reject" type="button">Alleen noodzakelijk</button><button id="trico-cookie-accept" type="button">Accepteren</button></div>';
+    document.body.appendChild(banner);
+    document.getElementById('trico-cookie-accept').addEventListener('click',()=>saveConsent('accepted'));
+    document.getElementById('trico-cookie-reject').addEventListener('click',()=>saveConsent('rejected'));
+  }
+
+  let consent=null;
+  try{consent=localStorage.getItem(CONSENT_KEY);}catch(e){}
+  if(consent==='accepted') loadAnalytics();
+  else if(consent!=='rejected') showBanner();
+})();
