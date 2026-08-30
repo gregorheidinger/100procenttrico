@@ -12,4 +12,4 @@ if(diner){
 const dinerPhoto=document.querySelector('#diner .mainpic');
 if(dinerPhoto){dinerPhoto.src='assets/images/originals/055.jpg';dinerPhoto.alt='100% Trico dinershow';}
 const maatwerkPhoto=document.querySelector('#maatwerk .widephoto img');
-if(maatwerkPhoto){maatwerkPhoto.src='assets/images/originals/002.jpg';maatwerkPhoto.alt='100% Trico live';}
+if(maatwerkPhoto){maatwerkPhoto.src='assets/images/originals/002.png';maatwerkPhoto.alt='100% Trico live';}
